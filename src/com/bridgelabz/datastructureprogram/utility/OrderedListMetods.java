@@ -172,26 +172,26 @@ public class OrderedListMetods {
 	
 	public void fileWriter(String file)
 	{
-		String str="";
-		 BufferedWriter bw=null;
+		String string="";
+		 BufferedWriter bufferedWriter=null;
 		try {
 			FileWriter writer = new FileWriter(file,false);
-            bw = new BufferedWriter(writer); 
+			bufferedWriter = new BufferedWriter(writer); 
 			temp=head;
 			while(temp!=null)
 			{
-				str=str+temp.getData()+" ";
+				string=string+temp.getData()+" ";
 				temp=temp.getNextNode();
 			}
-			bw.write(str);
-			bw.flush();
+			bufferedWriter.write(string);
+			bufferedWriter.flush();
            
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		finally {
 			try {
-				bw.close();
+				bufferedWriter.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

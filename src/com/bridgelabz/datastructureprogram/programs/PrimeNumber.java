@@ -6,7 +6,6 @@ import com.bridgelabz.datastructureprogram.utility.Utility;
 
 public class PrimeNumber {
 	public static void main(String[] args) {
-		PrimeNumber prime=new PrimeNumber();
 		Utility utility=new Utility();
 		System.out.println("Program Started.");
 		int start=1;

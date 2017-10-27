@@ -6,11 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Scanner;
-
-import com.bridgelabz.datastructureprogram.programs.Calendar;
 
 /**
  * @author Deepak Prajapati
@@ -195,26 +192,26 @@ public class Utility {
 	 */
 	public void fileWriter(String file)
 	{
-		String str="";
-		 BufferedWriter bw=null;
+		String string="";
+		 BufferedWriter bufferedWriter=null;
 		try {
 			FileWriter writer = new FileWriter(file,false);
-            bw = new BufferedWriter(writer); 
+			bufferedWriter = new BufferedWriter(writer); 
 			temp=head;
 			while(temp!=null)
 			{
-				str=str+temp.getData()+" ";
+				string=string+temp.getData()+" ";
 				temp=temp.getNext();
 			}
-			bw.write(str);
-			bw.flush();
+			bufferedWriter.write(string);
+			bufferedWriter.flush();
            
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		finally {
 			try {
-				bw.close();
+				bufferedWriter.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -224,28 +221,28 @@ public class Utility {
 	
 	public void balanceParanthesis()
 	{
-		Scanner scan = new Scanner(System.in);
-        Stack stk=new Stack();
+		Scanner scanner = new Scanner(System.in);
+        Stack stack=new Stack();
         System.out.println("Parenthesis Matching Test\n");
         /* Accepting expression */
         System.out.println("Enter expression");
-        String exp = scan.next();        
-        int len = exp.length();
+        String exp = scanner.next();        
+        int length = exp.length();
         System.out.println("\nMatches and Mismatches:\n");
-        for (int i = 0; i < len; i++)
+        for (int i = 0; i < length; i++)
         {    
-            char ch = exp.charAt(i);
-            if (ch == '(')
-                stk.push(i);
+            char charactor = exp.charAt(i);
+            if (charactor == '(')
+                stack.push(i);
             
-            else if (ch == ')')
+            else if (charactor == ')')
             {
-                    stk.pop();
+                    stack.pop();
                     System.out.println("True");
             }            
         }
         int condition=1;
-        while (!stk.isEmpty() && condition==1)
+        while (!stack.isEmpty() && condition==1)
         {
         	System.out.println("False");
         	condition++;
@@ -260,13 +257,13 @@ public class Utility {
 	 */
 	public boolean Palindrome(String str)
 	{
-		char[] ch=str.toCharArray();
+		char[] charArray=str.toCharArray();
 		
 		boolean condition=true;
 		int i1 = 0;
-		int i2 = ch.length - 1;
+		int i2 = charArray.length - 1;
 		while (i2 > i1) {
-			if (ch[i1] != ch[i2]) {
+			if (charArray[i1] != charArray[i2]) {
 				condition= false;
 				return condition;
 			}
@@ -287,11 +284,11 @@ public class Utility {
 	public String fileReader(String file)
 	{
 		String string=null;
-		BufferedReader br=null;
+		BufferedReader bufferedWriter=null;
 		try {
-			FileReader fr=new FileReader(file);
-			br=new BufferedReader(fr);
-			string=br.readLine();
+			FileReader fileReader=new FileReader(file);
+			bufferedWriter=new BufferedReader(fileReader);
+			string=bufferedWriter.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -438,9 +435,9 @@ public class Utility {
 		LinkedList<Integer> list=new LinkedList<Integer>();
 		for(int a=start; a<end; a++)
 		{
-			int num = a, count=0;
+			int number = a, count=0;
 
-			for (int i = 1; i <= num; i++)
+			for (int i = 1; i <= number; i++)
 			{
 				count = 0;
 				for (int j = 2; j <= i / 2; j++) 
@@ -470,17 +467,17 @@ public class Utility {
 	 */
 	public boolean anagram(int number, int number2)
 	{
-		String str=Integer.toString(number);
-		char[] charArray=str.toCharArray();
-		String str2=Integer.toString(number2);
-		char[] charArray2=str2.toCharArray();
+		String string=Integer.toString(number);
+		char[] charArray=string.toCharArray();
+		String string2=Integer.toString(number2);
+		char[] charArray2=string2.toCharArray();
 		Arrays.sort(charArray);
 		Arrays.sort(charArray2);
-		str=new String(charArray);
-		str2=new String(charArray2);
-		if(str.length()==str2.length())
+		string=new String(charArray);
+		string2=new String(charArray2);
+		if(string.length()==string2.length())
 		{
-			if(str.equals(str2))
+			if(string.equals(string2))
 			{
 				return true;
 			}

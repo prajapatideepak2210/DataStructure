@@ -8,17 +8,19 @@ import com.bridgelabz.datastructureprogram.utility.Stack;
 import com.bridgelabz.datastructureprogram.utility.Utility;
 
 public class StackCalendar {
+	private static Scanner scanner;
+
 	public static void main(String[] args) {
 		Utility utility=new Utility();
-		Scanner scan=new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		System.out.print("Enter the year which should be in 4 charactor only : ");
-		int year=scan.nextInt();
+		int year=scanner.nextInt();
 		int length=(int)Math.log10(year)+1;
 		String[][] calendar=null;
 		if(length==4)
 		{
 			System.out.print("Enter the Month which should be into 1 to 12 : ");
-			int month=scan.nextInt();
+			int month=scanner.nextInt();
 			if(month>0 && month<13)
 			{
 				calendar=utility.calendar(year, month);
@@ -52,7 +54,6 @@ public class StackCalendar {
 			queue.getelement();
 			stack.push(queue);
 		}
-		Stack<String> newCalendar=stack.getElement();
-		
+		stack.getElement();
 	}
 }

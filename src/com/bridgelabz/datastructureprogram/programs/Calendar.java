@@ -7,15 +7,15 @@ import com.bridgelabz.datastructureprogram.utility.Utility;
 public class Calendar {
 	public static void main(String[] args) {
 		Utility utility=new Utility();
-		Scanner scan=new Scanner(System.in);
+		Scanner scanner=new Scanner(System.in);
 		System.out.print("Enter the year which should be in 4 digit only : ");
-		int year=scan.nextInt();
+		int year=scanner.nextInt();
 		int length=(int)Math.log10(year)+1;
 		String[][] calendar=null;
 		if(length==4)
 		{
 			System.out.print("Enter the Month which should be into 1 to 12 : ");
-			int month=scan.nextInt();
+			int month=scanner.nextInt();
 			System.out.println("\n\n");
 			if(month>0 && month<13)
 			{

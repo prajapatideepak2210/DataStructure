@@ -9,42 +9,40 @@ import com.bridgelabz.datastructureprogram.utility.OrderedListMetods;
 
 public class OrderedList {
 	public static void main(String[] args) {
-		OrderedListMetods o1=new OrderedListMetods();
-		Scanner sc=new Scanner(System.in);
+		OrderedListMetods orderedListMetods=new OrderedListMetods();
+		Scanner scanner=new Scanner(System.in);
 		System.out.println("Program Started.");
-		String str=null;
+		String string=null;
 		String file="/home/bridgeit/Deepak Programs/DataStructureProgram/file for ordered list";
 		try {
-			FileReader fr=new FileReader(file);
-			BufferedReader bf=new BufferedReader(fr);
-			str=bf.readLine();
+			FileReader fileReader=new FileReader(file);
+			BufferedReader bufferedReader=new BufferedReader(fileReader);
+			string=bufferedReader.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		String str1=str.replaceAll(",", "");
-		String[] str2=str1.split(" ");
-		int[] array=new int[str2.length];
-		for(int i=0; i<str2.length; i++)
+		String string1=string.replaceAll(",", "");
+		String[] string2=string1.split(" ");
+		int[] array=new int[string2.length];
+		for(int i=0; i<string2.length; i++)
 		{
-			array[i]=Integer.parseInt(str2[i]);
+			array[i]=Integer.parseInt(string2[i]);
 		}
 		
-		for(int i=0; i<str2.length; i++)
+		for(int i=0; i<string2.length; i++)
 		{
-			o1.push(array[i]);
+			orderedListMetods.push(array[i]);
 		}
-		System.out.println("Size of Lis : "+o1.size());
-		o1.printList();
+		System.out.println("Size of Lis : "+orderedListMetods.size());
+		orderedListMetods.printList();
 		System.out.print("\nEnter a number to search : ");
-		int search=sc.nextInt();
+		int search=scanner.nextInt();
 		
-		o1.search(search);
-		System.out.println("Size of Lis : "+o1.size());
-		o1.printList();
+		orderedListMetods.search(search);
+		System.out.println("Size of Lis : "+orderedListMetods.size());
+		orderedListMetods.printList();
 		
-		o1.fileWriter(file);
+		orderedListMetods.fileWriter(file);
 	}
-	
-	
 }

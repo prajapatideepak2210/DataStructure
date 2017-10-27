@@ -8,40 +8,43 @@ import java.util.Scanner;
 import com.bridgelabz.datastructureprogram.utility.Utility;
 
 public class UnOrderedList {
+	private static Scanner scanner;
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+		
+		scanner=new Scanner(System.in);
 		System.out.println("Program Started.");
-		String str=null;
+		BufferedReader bufferedReader;
+		String string=null;
 		String file="/home/bridgeit/Deepak Programs/DataStructureProgram/File For Unordered list";
 		try {
-			FileReader fr=new FileReader(file);
-			BufferedReader bf=new BufferedReader(fr);
-			str=bf.readLine();
+			FileReader fileReader=new FileReader(file);
+			bufferedReader = new BufferedReader(fileReader);
+			string=bufferedReader.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		String str1=str.replaceAll(",", "");
-		String[] str2=str1.split(" ");
+		String string1=string.replaceAll(",", "");
+		String[] string2=string1.split(" ");
 		
-		Utility o1=new Utility();
-		for(int i=str2.length-1; i>=0; i--)
+		Utility utility=new Utility();
+		for(int i=string2.length-1; i>=0; i--)
 		{
-			o1.add(str2[i]);
+			utility.add(string2[i]);
 		}
-		System.out.println("The size of list : "+o1.size());
+		System.out.println("The size of list : "+utility.size());
 		//printing all list 
 		System.out.println("All content : ");
 		System.out.println("===================================================");
-		for(String i : str2)
+		for(String i : string2)
 		{
 			System.out.print(i+" ");
 		}
 		System.out.println("\n===================================================");
 		System.out.print("Enter what you want to search : ");
-		String search=sc.next();
-		o1.search(search);
-		System.out.println("The size of list : "+o1.size());
-		o1.fileWriter(file);
+		String search=scanner.next();
+		utility.search(search);
+		System.out.println("The size of list : "+utility.size());
+		utility.fileWriter(file);
 		
 		System.out.println("Program ended.");
 	}

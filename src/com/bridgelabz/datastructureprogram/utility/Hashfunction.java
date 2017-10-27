@@ -17,7 +17,7 @@ import java.util.Scanner;
  *
  */
 public class Hashfunction {
-	Scanner scan=new Scanner(System.in);
+	Scanner scanner=new Scanner(System.in);
 
 	/**
 	 * @param string
@@ -57,7 +57,7 @@ public class Hashfunction {
 		}
 
 		System.out.print("Enter the number to search : ");
-		int numberToFind=scan.nextInt();
+		int numberToFind=scanner.nextInt();
 		int remainderForSearch=numberToFind%11;
 
 		LinkedList<Integer> linkedList2 = new LinkedList<>();
@@ -96,14 +96,14 @@ public class Hashfunction {
 					list2.add(list.get(j));
 				}
 			}
-			String str="";
+			String string3="";
 			for (int elements : list2)	
 			{
-				str=str+elements+" ";
+				string3=string3+elements+" ";
 			}
-			System.out.println(str);
+			System.out.println(string3);
 			fileWriter=new FileWriter(file);
-			fileWriter.write(str);
+			fileWriter.write(string3);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -115,7 +115,5 @@ public class Hashfunction {
 				e.printStackTrace();
 			}
 		}
-
 	}
-
 }

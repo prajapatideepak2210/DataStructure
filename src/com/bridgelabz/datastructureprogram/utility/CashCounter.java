@@ -3,11 +3,11 @@ package com.bridgelabz.datastructureprogram.utility;
 public class CashCounter {
 	
 	public double bankBalance=0;
-	Queue q1=null;
+	Queue<Integer> queue=null;
 	public CashCounter(double bankAmount, int numOfPeople)
 	{
 		bankBalance=bankAmount;
-		q1=new Queue(numOfPeople);
+		queue=new Queue<Integer>(numOfPeople);
 	}
 	
 	public void withdrawal(double amount)
@@ -16,7 +16,7 @@ public class CashCounter {
 		{
 			bankBalance=bankBalance-amount;
 			System.out.println(amount+" rs has been withdrawaled.");
-			q1.deueue();
+			queue.deueue();
 		}
 		else
 		{
@@ -28,6 +28,6 @@ public class CashCounter {
 	{
 		bankBalance=bankBalance+amount;
 		System.out.println(amount+" rs deposited.");
-		q1.deueue();
+		queue.deueue();
 	}
 }
